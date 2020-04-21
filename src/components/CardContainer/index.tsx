@@ -26,6 +26,7 @@ const CardContainer: React.FC<CardContainerProps> = ({
         <Card
           bgColor={card.bgColor}
           textColor={card.textColor}
+          key={card.type}
         >
           <header>
             <p>{card.title}</p>
