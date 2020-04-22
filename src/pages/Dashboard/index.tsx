@@ -6,6 +6,7 @@ import Header from '../../components/Header';
 import CardContainer from '../../components/CardContainer';
 
 import { formatApiTransactions } from '../../utils/transactions';
+import formatValue from '../../utils/formatValue'
 
 import { Container, TableContainer } from './styles';
 import { format } from 'path';
@@ -49,41 +50,22 @@ const Dashboard: React.FC = () => {
           cards={[
             {
               title: 'Entradas',
-              mainText: balance.income || null,
+              mainText: formatValue(balance.income) || null,
               type: 'income',
             },
             {
               title: 'Saídas',
-              mainText: balance.outcome || null,
+              mainText: formatValue(balance.outcome) || null,
               type: 'outcome',
             },
             {
               title: 'Total',
-              mainText: balance.total || null,
+              mainText: formatValue(balance.total) || null,
               type: 'total',
               bgColor: '#FF872C',
             },
           ]}
         ></CardContainer>
-        {/* <button
-          onClick={() => {
-            setTransactions([
-              ...transactions,
-              {
-                id: 'string',
-                title: 'string',
-                value: 255,
-                formattedValue: 'string',
-                formattedDate: 'string',
-                type: 'income',
-                category: { title: 'string' },
-                created_at: new Date(),
-              },
-            ]);
-          }}
-        >
-          click me
-        </button> */}
         <TableContainer>
           <table>
             <thead>

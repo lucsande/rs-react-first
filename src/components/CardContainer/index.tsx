@@ -1,9 +1,8 @@
 import React from 'react';
-import formatValue from '../../utils/formatValue';
 import { StyledCardContainer, Card } from './styles';
 
 interface CardProps {
-  mainText: string | number | null;
+  mainText: number | string | null;
   title: string;
   type: string;
   bgColor?: string;
@@ -32,7 +31,7 @@ const CardContainer: React.FC<CardContainerProps> = ({
               alt={card.type}
             />
           </header>
-          <h1 data-testid={`balance-${card.type}`}>{formatValue(card.mainText)}</h1>
+          <h1 data-testid={`balance-${card.type}`}>{card.mainText}</h1>
         </Card>
       ))}
     </StyledCardContainer>
