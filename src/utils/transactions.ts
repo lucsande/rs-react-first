@@ -17,9 +17,10 @@ export const formatApiTransactions = (transactions: Transaction[]) => {
 };
 
 export const formatApiTransaction = (trans: Transaction) => {
+  const sign = trans.type === 'income' ? '' : '- ';
   return {
     ...trans,
-    formattedValue: formatValue(trans.value),
+    formattedValue: sign + formatValue(trans.value),
     formattedDate: formatDate(new Date(trans.created_at)),
   };
 };

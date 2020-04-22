@@ -65,7 +65,25 @@ const Dashboard: React.FC = () => {
             },
           ]}
         ></CardContainer>
-
+        {/* <button
+          onClick={() => {
+            setTransactions([
+              ...transactions,
+              {
+                id: 'string',
+                title: 'string',
+                value: 255,
+                formattedValue: 'string',
+                formattedDate: 'string',
+                type: 'income',
+                category: { title: 'string' },
+                created_at: new Date(),
+              },
+            ]);
+          }}
+        >
+          click me
+        </button> */}
         <TableContainer>
           <table>
             <thead>
